@@ -1,0 +1,9 @@
+package modelo;
+
+public class Medico {
+	private String apellido;
+	private String Nombre;
+	private String Especialidad;
+	private Paciente pacienteFrecuente;
+
+}

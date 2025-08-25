@@ -1,0 +1,123 @@
+package modelo;
+
+public class ArregloBidimencional {
+	private double[][] matrizA;
+
+	public double[][] getMatrizA() {
+		return matrizA;
+	}
+
+	public void setMatrizA(double[][] matrizA) {
+		this.matrizA = matrizA;
+	}
+
+	public ArregloBidimencional(double[][] matrizA) {
+		super();
+		this.matrizA = matrizA;
+	}
+	
+	
+	public double[][] sumar(double[][] matrizB){
+		double[][] matrizC=new double[3][2];
+		
+		for(int i=0;i<matrizB.length;i++) {
+			for(int j=0;j<matrizB.length;j++) {
+				matrizC[i][j]=this.matrizA[i][j]+matrizB[i][j];
+				
+			}
+			
+		}
+		
+
+		
+		return matrizC;
+	}
+	
+	
+	
+	public double[][] restar(double[][] matrizB){
+		double[][] matrizC=new double[matrizB.length][matrizB.length];
+		
+		for(int i=0;i<matrizB.length;i++) {
+		
+			for(int j=0;j<matrizB.length;j++) {
+				matrizC[i][j]=this.matrizA[i][j]-matrizB[i][j];
+				
+			}
+			
+		}
+		
+
+		
+		return matrizC;
+	}
+	
+	
+	public void mostrar (double[][] matrizC) {
+		
+
+		for(int i=0;i<3;i++) {
+			for(int j=0;j<3;j++) {
+			System.out.print("[ "+ matrizC[i][j]+" ]");
+				
+			}
+			System.out.println();
+		
+			
+		}
+		System.out.println(" ");
+	}
+public double[][] traspuesta(){
+	double[][] matrizC=new double[matrizA.length][matrizA.length];
+	for(int i=0;i<matrizA.length;i++) {
+		for(int j=0;j<matrizA.length;j++) {
+			matrizC[i][j]=matrizA[j][i];
+			
+		}
+		}
+	
+	return matrizC;
+	
+	
+	
+	
+}
+
+
+public double[][] multiplicar(double numero){
+	double[][] matrizC=new double[matrizA.length][matrizA.length];
+
+	for(int i=0;i<matrizA.length;i++) {
+		for(int j=0;j<matrizA.length;j++) {
+	
+			matrizC[i][j]=numero*matrizA[j][i];
+}
+		
+}
+
+	return matrizC;
+
+}
+
+
+public double[][] multiplicar(double[][]matrizB){
+	double[][] matrizC=new double[matrizA.length][matrizA.length];
+	for(int i=0;i<matrizA.length;i++) {
+		for(int j=0;j<matrizA.length;j++) {
+			matrizC[i][j]=matrizA[i][j]*matrizB[i][j];
+			
+		}
+		}
+	
+	return matrizC;
+	
+	
+	
+	
+}
+
+
+
+
+}
+

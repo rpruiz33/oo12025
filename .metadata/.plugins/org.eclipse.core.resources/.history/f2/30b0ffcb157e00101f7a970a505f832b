@@ -1,0 +1,37 @@
+package modelo;
+
+public class ArregloBidimencional {
+	private double[][] matrizA;
+
+	public double[][] getMatrizA() {
+		return matrizA;
+	}
+
+	public void setMatrizA(double[][] matrizA) {
+		this.matrizA = matrizA;
+	}
+
+	public ArregloBidimencional(double[][] matrizA) {
+		super();
+		this.matrizA = matrizA;
+	}
+	
+	
+	public double[][] sumar(double[][] matrizB){
+		double[][] matrizC= {{0,0},{0,0},{0,0}};
+		for(int i=0;i<matrizA.length;i++) {
+			for(int j=0;j<matrizA.length;j++) {
+				matrizC[j][i]=matrizA[i][j]+matrizB[i][j];
+			}
+			
+		}
+		
+		
+		
+		return matrizC;
+	}
+	
+	
+	
+	
+}

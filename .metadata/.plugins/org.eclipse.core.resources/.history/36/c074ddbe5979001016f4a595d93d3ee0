@@ -1,0 +1,36 @@
+package test;
+import consultorio.Medico;
+import consultorio.Paciente;
+
+public class TestConsultorio {
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Paciente paciente1 = new Paciente("Jose", "Perez", 1.80f, 85);
+		Paciente paciente2 = new Paciente("Jorge", "Fernandez", 1.60f, 90);
+		System.out.println("visita 1");
+		Medico m1=new Medico("Ruiz","Roberto","psiquiatra");
+		
+		System.out.println(m1.getEspecialidad());
+		System.out.println("Pacientes:");
+		
+		
+		
+		System.out.println(paciente1.traerNombreCompleto()+" imc->"+m1.CalcularIMC(paciente1.getPeso(),paciente1.getEstatura()));
+		
+		System.out.println(paciente2.traerNombreCompleto()+" imc->"+m1.CalcularIMC(paciente2.getPeso(),paciente2.getEstatura()));
+		
+		System.out.println("\nvisita 2");
+		System.out.println(m1.getEspecialidad());
+		System.out.println("Pacientes:");
+		
+		paciente1.setPeso(120);
+		paciente1.setEstatura(178);	
+		
+		paciente1.setPeso(96);
+		paciente1.setEstatura(179);	
+		
+		System.out.println(paciente1.traerNombreCompleto()+" imc->"+m1.CalcularIMC(paciente1.getPeso(),paciente1.getEstatura()));
+		
+		System.out.println(paciente2.traerNombreCompleto()+" imc->"+m1.CalcularIMC(paciente2.getPeso(),paciente2.getEstatura()));
+		}
+}

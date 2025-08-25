@@ -1,0 +1,14 @@
+package test;
+import modelo.ArregloBidimencional;
+public class Test {
+
+	public static void main(String[] args) {
+		
+		double[][] matriz= {{2,2},{2,2},{3,3}};
+		ArregloBidimencional b=new ArregloBidimencional(matriz);
+		System.out.println(b.sumar(matriz));
+		
+
+	}
+
+}

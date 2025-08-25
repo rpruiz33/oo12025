@@ -1,0 +1,90 @@
+package modelo;
+
+import modelo.Paciente;
+
+public class Medico {
+	private String apellido;
+	private String Nombre;
+	private String Especialidad;
+	private Paciente[] pacienteFrecuente;
+	
+	
+	public Medico(String apellido, String nombre, String especialidad,Paciente[] pacienteFrecuente) {
+		super();
+		this.apellido = apellido;
+		Nombre = nombre;
+		Especialidad = especialidad;
+		this.pacienteFrecuente= pacienteFrecuente;
+	}
+	
+	
+	
+	
+	
+	public String getApellido() {
+		return apellido;
+	}
+	public void setApellido(String apellido) {
+		this.apellido = apellido;
+	}
+	public String getNombre() {
+		return Nombre;
+	}
+	public void setNombre(String nombre) {
+		Nombre = nombre;
+	}
+	public String getEspecialidad() {
+		return Especialidad;
+	}
+	public void setEspecialidad(String especialidad) {
+		Especialidad = especialidad;
+	}
+
+
+	public float CalcularIMC(Paciente pa) {
+		float IMC=0;
+		IMC=pa.getPeso()/(pa.getEstatura()*pa.getEstatura());
+
+		return IMC;
+		
+	}
+
+	public double traerPromedioPeso() {
+		double promedio=0;
+		double suma=0;
+		for(int i=0;i<pacienteFrecuente.length;i++) {
+			suma=pacienteFrecuente[i].getPeso()+suma;
+			
+		}
+		return promedio=suma/pacienteFrecuente.length;
+	
+	}
+	
+	public Paciente traerPacienteConMayorEstatura() {
+		Paciente aux=pacienteFrecuente[0];
+		
+		for(int i=0;i<pacienteFrecuente.length;i++) {
+			
+			if(pacienteFrecuente[i].getEstatura() >= aux.getEstatura()) {
+			aux=pacienteFrecuente[i];
+			}
+		}
+		return aux;
+	}
+	
+	public Paciente traerPacienteConMenorIMC() {
+		Paciente pac = null;
+		float aux2=0;
+		float aux=0;
+		for(int i=1;i<pacienteFrecuente.length;i++) {
+		aux2=CalcularIMC(pacienteFrecuente[i]);
+			if(aux2<aux){
+				pac=pacienteFrecuente[i];
+			}
+			
+			
+			
+		}
+		return pac;
+	}
+}
