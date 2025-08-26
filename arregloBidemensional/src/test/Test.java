@@ -1,5 +1,7 @@
 package test;
 
+import modelo.ArregloBidimencional;
+
 public class Test {
 
 	public static void main(String[] args) {
@@ -10,20 +12,23 @@ public class Test {
 							{2,2},
 							{3,3}};
 		ArregloBidimencional b=new ArregloBidimencional(matriz);
-		b.sumar(matriz);
-		//b.mostrar(c);
+		double [][]c=b.sumar(matriz);
+		System.out.println("\n*****************");
+		b.mostrar(c,matriz.length,matriz[0].length);
 		double [][]d=b.restar(matriz);
-
-		//b.mostrar(d);
-
+		System.out.println("\n*****************");
+		b.mostrar(d,matriz.length,matriz[0].length);
+		System.out.println("\n*****************");
 		double [][]e=b.traspuesta();
-		//b.mostrar(e);
+		System.out.println("\n*****************");
+		b.mostrar(e,matriz.length,matriz.length);
+		System.out.println("\n*****************");
 		double [][]r=b.multiplicar(matriz2);
-		//b.mostrar(r);
-		
+		b.mostrar(r,matriz2[0].length,matriz.length);
+		System.out.println("\n*****************");
 		double [][]p=b.multiplicar(10.3);
-		//b.mostrar(p);
-		
+		b.mostrar(p,matriz.length,matriz[0].length);
+		System.out.println("\n*****************");
 		
 		
 	}
