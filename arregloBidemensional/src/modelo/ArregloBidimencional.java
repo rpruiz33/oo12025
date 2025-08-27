@@ -98,19 +98,23 @@ public double[][] multiplicar(double numero){
 }
 
 
+//tambien podria haber sido la asignacion de la dimension como la matriz péro
+//	int filas=matrizA.length;
+//int columna=matrizA[0].length;
+
 public double[][] multiplicar(double [][]matrizB ){
-	int filas=matrizA.length;
-	int columna=matrizA[0].length;
+	int filas=matrizB[0].length;
+	int columna=matrizB.length;
 	double [][] resultado= new double[filas][columna];
 
 	for (int i = 0; i <filas; i++) {
 		for (int j = 0; j <columna ; j++) {
 			for (int k = 0; k < columna; k++) {
-                resultado[i][j] += matrizA[i][k] * matrizB[k][i];
+                resultado[i][j] = resultado[i][j]+ matrizA[i][k] * matrizB[k][i];
             }
 	}
 	
-	
+	//acaa se hace el bucle de las columnaas 2 veces pq es colunmna de * fila=columna de la otra
 }
 	return resultado;
 }
