@@ -1,0 +1,57 @@
+package modelo;
+
+public class Numero {
+private int n;
+
+public int sumar(int n1){
+	return n1+this.n;
+	
+}
+public int multiplicar(int n1) {
+	return n1*n;
+	
+}
+
+public boolean esPrimo(int n) {
+    boolean flag = true;
+    int i=1;
+    int cont=0;
+    	while(i<n&& cont!=2) {
+    		if(n%i==0) {
+    			i++;
+    			flag=false;
+    			cont++;
+    			;
+    		
+    		}
+    		else {
+    			flag=true;
+    			i++;
+    		}
+    	}
+    
+    
+    
+    
+    return flag;
+}
+
+public Numero(int n) {
+	super();
+	this.n = n;
+}
+public int getN() {
+	return n;
+}
+public void setN(int n) {
+	this.n = n;
+}
+
+
+
+
+
+
+
+
+}

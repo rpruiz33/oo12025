@@ -1,0 +1,13 @@
+package test;
+import modelo.Numero;
+public class Test {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Numero n=new Numero(10);
+		
+		
+		System.out.println(n.esPrimo(5));
+	}
+
+}

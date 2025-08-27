@@ -1,0 +1,148 @@
+package test;
+
+public class ArregloBidimencional {
+	private double[][] matrizA;
+
+	public double[][] getMatrizA() {
+		return matrizA;
+	}
+
+	public void setMatrizA(double[][] matrizA) {
+		this.matrizA = matrizA;
+	}
+
+	public ArregloBidimencional(double[][] matrizA) {
+		super();
+		this.matrizA = matrizA;
+	}
+	
+	
+	public double[][] sumar(double[][] matrizB){
+		double[][] matrizC=new double[2][3];
+		
+		
+		for(int i=0;i<2;i++) {
+			for(int j=0;j<3;j++) {
+				matrizC[i][j]=this.matrizA[i][j]+matrizB[i][j];
+				
+			}
+			
+		}
+		
+		for (int i = 0; i <2; i++) {
+			System.out.println();
+			for (int j = 0; j <3; j++) {
+				System.out.print(matrizC[i][j]);
+			}
+		}
+		
+		return matrizC;
+	}
+	
+	
+	
+	public double[][] restar(double[][] matrizB){
+		double[][] matrizC=new double[matrizB.length][matrizB.length];
+		
+		for(int i=0;i<matrizB.length;i++) {
+		
+			for(int j=0;j<matrizB.length;j++) {
+				matrizC[i][j]=this.matrizA[i][j]-matrizB[i][j];
+				
+			}
+			
+		}
+		
+		for (int i = 0; i <matrizB.length; i++) {
+			System.out.println();
+			for (int j = 0; j <matrizB.length; j++) {
+				System.out.println(matrizC[i][j]);
+			}
+		}
+		
+		return matrizC;
+	}
+	
+	
+
+public double[][] traspuesta(){
+	
+	int fila=3;
+	int columnas=2;
+	double[][] matrizC=new double[fila][columnas];
+	for(int i=0;i<fila;i++) {
+		for(int j=0;j<columnas;j++) {
+			matrizC[i][j]=matrizA[j][i];
+			
+		}
+		}
+	
+	for (int i = 0; i <3; i++) {
+		System.out.println();
+		for (int j = 0; j <2; j++) {
+			System.out.print(matrizC[i][j]);
+		}
+	}
+	
+	return matrizA;
+	
+	
+	
+	
+}
+
+
+public double[][] multiplicar(double numero){
+	double[][] matrizC=new double[matrizA.length][matrizA.length];
+
+	for(int i=0;i<matrizA.length;i++) {
+		for(int j=0;j<matrizA.length;j++) {
+	
+			matrizC[i][j]=numero*matrizA[j][i];
+}
+		
+}
+	for (int i = 0; i <matrizA.length; i++) {
+		System.out.println();
+		for (int j = 0; j <matrizA.length; j++) {
+			System.out.println(matrizC[i][j]);
+		}
+	}
+
+	return matrizC;
+
+}
+
+
+public double[][] multiplicar(double [][]matrizB ){
+	int filas=2;
+	int columnas=3;
+	double [][] resultado= new double[filas][columnas];
+
+	for (int i = 0; i <filas; i++) {
+		for (int j = 0; j <columnas ; j++) {
+			for (int k = 0; k < columnas; k++) {
+                resultado[i][j] += matrizA[i][k] * matrizB[k][i];
+            }
+	}
+	this.mostrar(matrizB);
+	
+}
+
+	return resultado;
+}
+
+public void mostrar (double [][]matrizB) {
+	for (int i = 0; i <matrizB.length; i++) {
+		System.out.println();
+		for (int j = 0; j <matrizB[0][matrizB.length]; j++) {
+			System.out.print(matrizB[i][j]);
+		}
+		}
+	
+	
+}
+
+
+}
+

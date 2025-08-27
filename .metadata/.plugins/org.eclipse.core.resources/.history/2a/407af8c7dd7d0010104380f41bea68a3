@@ -1,0 +1,115 @@
+package modelo;
+
+public class Numero {
+private int n;
+
+public int sumar(int n1){
+	return n1+this.n;
+	
+}
+public int multiplicar(int n1) {
+	return n1*n;
+	
+}
+
+
+public boolean esPar(){
+	return this.n%2==0;
+	
+	
+	
+}
+
+public boolean esPrimo(int n) {
+    boolean flag = false;
+    int i=1;
+    int cont=0;
+    if(n<=0) {
+    	flag=false;
+    	cont=2;
+    }
+
+    	while(i<n&& cont!=2) {
+    		if(n%i==0) {
+    			i++;
+    			flag=false;
+    			cont++;
+    			;
+    		
+    		}
+    		else {
+    			flag=true;
+    			i++;
+    		}
+    	}
+    
+    return flag;
+}
+
+
+public String convertirAString() {
+	String s="";
+
+	
+return s.valueOf(n);
+
+	
+	
+}
+
+public double convertirDouble() {
+	String n1="";
+
+	double num=0;
+	num=Double.parseDouble(	n1.valueOf(n));
+
+	return num;
+	
+}
+
+public double calcularPotencia(int exp) {
+	
+	return Math.pow(this.n,exp);
+	
+	
+	
+}
+
+public int calcularFactorial() {
+	
+	int factorial=0;
+	if(n<=0) {
+		factorial=1;
+	}
+	
+	for (int i=0;i<n;i++) {
+		factorial=i*i+1;
+		
+	}
+	
+	return factorial;
+	
+	
+	
+	
+}
+
+public Numero(int n) {
+	super();
+	this.n = n;
+}
+public int getN() {
+	return n;
+}
+public void setN(int n) {
+	this.n = n;
+}
+
+
+
+
+
+
+
+
+}
