@@ -27,11 +27,30 @@ public class Test {
 	System.out.println(incaa.getCatalogo().toString());
 	
 	try {
-		System.out.println(incaa.traerPelicula(3));
+		System.out.println(incaa.traerPelicula(2));
 	} catch (Exception e) {
 		// TODO Auto-generated catch block
 		e.printStackTrace();
 	}
-	}
+	
+	System.out.println(incaa.traerPelicula(("rober2222222").toString()));
+		
 
+		try {
+			incaa.modificarPelicula(1, "arquez");
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		System.out.println(incaa.getCatalogo().toString());
+		
+		try {
+			System.out.println(incaa.eliminarPelicula(1));
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		System.out.println(incaa.getCatalogo().toString());
+	}
 }
