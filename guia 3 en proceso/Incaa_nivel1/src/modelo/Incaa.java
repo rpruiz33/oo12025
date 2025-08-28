@@ -34,8 +34,7 @@ public class Incaa {
 		if(catalogo.size()>=1) {
 			id=catalogo.get(catalogo.size()-1).getIdPelicula()+1;
 		}
-		Pelicula p=new Pelicula(id,pelicula);
-		return catalogo.add(p);
+			return catalogo.add(new Pelicula(id,pelicula));
 	}
 
 	@Override
